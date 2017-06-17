@@ -1,0 +1,106 @@
+<template>
+  <require from='../common.css#ux'></require>
+  <require from="./tabs.css#ux"></require>
+
+  <main styles.main>
+    <h1 styles.header>
+      &lt;ux-tab&gt;&lt;/ux-tab&gt;
+    </h1>
+
+    <p styles.description>
+      The <code>ux-tab</code> element is used to display a single tab. The <code>text</code> attribute can be used to set the label of a tab.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tab text="Account"></ux-tab>
+
+        <code>&lt;ux-tab text="Account"&gt;<br>&lt;/ux-tab&gt;</code>
+      </figure>
+    </section>
+
+    <p styles.description>
+      The <code>icon</code> attribute can be used to set the icon of a tab. The value is expected to be the name of a <a route-href="route: icons">ux-icon</a>.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tab icon="face"></ux-tab>
+
+        <code>&lt;ux-tab icon="face"&gt;<br>&lt;/ux-tab&gt;</code>
+      </figure>
+    </section>
+
+    <p styles.description>
+      A tab can have both a <code>text</code> and an <code>icon</code> attribute.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tab icon="face" text="Account"></ux-tab>
+
+        <code>&lt;ux-tab icon="face"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text="Account"&gt;<br>&lt;/ux-tab&gt;</code>
+      </figure>
+    </section>
+
+    <p styles.description>
+      The <code>selected</code> attribute can be used to mark the tab as selected.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tab text="Account" selected.one-time="true"></ux-tab>
+
+        <code>&lt;ux-tab text="Account"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selected.bind="true"&gt;<br>&lt;/ux-tab&gt;</code>
+      </figure>
+    </section>
+
+    <p styles.description>
+      The <code>disabled</code> attribute can be used to disable a tab.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tab text="Account" disabled.one-time="true"></ux-tab>
+
+        <code>&lt;ux-tab text="Account"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled.bind="true"&gt;<br>&lt;/ux-tab&gt;</code>
+      </figure>
+    </section>
+
+    <h1 styles.header>
+      &lt;ux-tabs&gt;&lt;/ux-tabs&gt;
+    </h1>
+
+    <p styles.description>
+      The <code>ux-tabs</code> element is used as a container for <code>ux-tab</code> elements. Its job is to manage the <code>selected</code>
+      attribute of its tabs, so that a tab gets selected when it is clicked, and so only one tab is selected at any given time. It also
+      makes sure disabled tabs can't be selected.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tabs>
+          <ux-tab text="Account" selected.one-time="true"></ux-tab>
+          <ux-tab text="Favorites" disabled.one-time="true"></ux-tab>
+          <ux-tab text="Friends"></ux-tab>
+        </ux-tabs>
+
+        <code>&lt;ux-tabs&gt;...&lt;/ux-tabs&gt;</code>
+      </figure>
+    </section>
+
+    <p styles.description>
+      <code>ux-tab</code> elements can be repeated inside a <code>ux-tabs</code> container without any problem.
+    </p>
+
+    <section styles.feature>
+      <figure styles.figure>
+        <ux-tabs>
+          <ux-tab repeat.for="i of 3" text="Page ${i + 1}"></ux-tab>
+        </ux-tabs>
+
+        <code>repeat.for="i of 3"</code>
+      </figure>
+    </section>
+  </main>
+</template>
